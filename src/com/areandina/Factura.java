@@ -6,6 +6,8 @@ public class Factura extends Precio {
     private Asesor asesor;
     private Cliente cliente;
     private List<Producto> productos = new ArrayList<>();
+    
+    private int witdh = 30;
 
     public Factura(Asesor asesor, Cliente cliente) {
         this.asesor = asesor;
@@ -19,7 +21,7 @@ public class Factura extends Precio {
         Productos(output);
 
         output.append("\n");
-        output.append("----------------------");
+        printDivider(output);
         output.append("\n");
         output.append("Total");
         output.append("\t\t");
@@ -27,6 +29,14 @@ public class Factura extends Precio {
 
 
         return output.toString();
+    }
+
+    private void printDivider(StringBuilder output) {
+        StringBuilder divider = new StringBuilder();
+        for (int i = 0; i < witdh; i++) {
+            divider.append("-");
+        }
+        output.append(divider);
     }
 
     private int getTotal() {

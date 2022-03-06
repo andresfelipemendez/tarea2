@@ -19,7 +19,7 @@ class FacturaTest {
 
         assertNotNull(factura.getProductos());
         assertEquals(2, factura.getProductos().size());
-        
+
         assertTrue(factura.Imprimir().contains("Producto1"));
         assertTrue(factura.Imprimir().contains("Producto2"));
     }
