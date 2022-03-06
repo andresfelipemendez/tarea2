@@ -8,7 +8,7 @@ public class Main {
                 new Asesor("Asesor1"),
                 new Cliente("Cliente1")
         );
-
+        factura.agregarProducto(new Producto("Producto1",15000));
         System.out.printf(factura.Imprimir());
     }
 }

@@ -13,9 +13,15 @@ class FacturaTest {
         Factura factura = new Factura(
                 new Asesor("Asesor1"), new Cliente("Cliente1")
         );
-        factura.agregarProducto(new Producto("producto1", 1500));
+
+        factura.agregarProducto(new Producto("Producto1", 1500));
+        factura.agregarProducto(new Producto("Producto2", 2500));
 
         assertNotNull(factura.getProductos());
+        assertEquals(2, factura.getProductos().size());
+        
+        assertTrue(factura.Imprimir().contains("Producto1"));
+        assertTrue(factura.Imprimir().contains("Producto2"));
     }
 
     @Test
